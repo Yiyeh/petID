@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
+// puede ser visto por usuarios no logueados
+Route::get('/', function () { return view('welcome'); });
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/inicio', 'PageController@index')->name('site-index');
